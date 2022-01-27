@@ -1,0 +1,37 @@
+<div class="results">
+    <div class="results__header">
+        <img src="assets/logo.png"
+             class="results__header__logo">
+    </div>
+    <div *ngIf="!showLoading"
+        class="mat-h1 mat-headline">
+        {{moviesList?.length}} movies found!
+    </div>
+
+    <div *ngFor="let movie of moviesList">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-subtitle>
+                <span> 
+                    Categories: 
+                </span>
+
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="mat-body mat-body-1">
+            </div>
+          </mat-card-content>
+        </mat-card>
+    </div>
+
+    <button class="results__back-btn"  
+            mat-fab 
+            matTooltip="Go back to home page"
+            color="primary"
+            (click)="goBackToHome()">
+    </button>
+</div>
+
+<app-generic-loading *ngIf="showLoading">
+</app-generic-loading>
