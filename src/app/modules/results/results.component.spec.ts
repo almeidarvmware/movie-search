@@ -16,9 +16,7 @@ describe('ResultsComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpClientTestingModule,
-        // MatSnackBarModule,
-        // MatDialogModule
+        HttpClientTestingModule
       ],
       providers: [],
       declarations: [ ResultsComponent ],
@@ -30,7 +28,6 @@ describe('ResultsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ResultsComponent);
     component = fixture.componentInstance;
-    component.searchQuery = 'blabla';
     fixture.detectChanges();
   });
 
