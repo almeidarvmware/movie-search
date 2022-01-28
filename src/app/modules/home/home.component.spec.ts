@@ -29,7 +29,6 @@ describe('HomeComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
-    component.searchQuery = 'blabla';
     fixture.detectChanges();
   });
 

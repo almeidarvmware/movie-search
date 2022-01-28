@@ -1,25 +1,20 @@
 <div class="home">
-    <div class="home__content">
-        <div class="home__content__header">
-            <img class="home__content__header__logo"
+    <div class="content">
+        
+        <div class="header">
+            <img class="logo"
                  src="assets/logo.png">
         </div>
-        <div class="home__content__body">
-            <mat-form-field appearance="fill">
-                <mat-label>Search text</mat-label>
-                <input matInput
-                    [formControl]="searchQuery"
-                    type="text" 
-                    placeholder="Ex: John Wick"
-                    (keydown.enter)="search()">
-            </mat-form-field>
-            <div class="home__content__body__btn">
-                <button mat-stroked-button
-                        color="primary"
-                        (click)="search()">
-                    Search
-                </button>
-            </div>
+
+        <div class="search-form">
+            <input [formControl]="searchQuery"
+                   type="text" 
+                   placeholder="Ex: John Wick"
+                   (keydown.enter)="search()">
+            <button class="action"
+                    (click)="search()">
+                Search
+            </button>
         </div>
     </div>
 </div>

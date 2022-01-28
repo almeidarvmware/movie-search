@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+
 import { Movie, MovieQueryResult } from 'src/app/shared/models/movie/movie.model';
 import { MovieService } from 'src/app/shared/services/movie.service';
 @Component({
@@ -23,8 +23,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private movieService: MovieService,
-    private _snackBar: MatSnackBar
+    private movieService: MovieService
   ) {
     this.checkIfRouterHasData();
   }
@@ -106,17 +105,13 @@ export class ResultsComponent implements OnInit, OnDestroy {
   }
 
   /**
-  * Show snackbar with the given error
+  * Show dialog with the given error
   *
   * @private
   * @param {*} err
   * @memberof ResultsComponent
   */
   private displayRequestError(err: any): void {
-    this._snackBar.open(`Error: ${err.errors[0]}`, 'Close', {
-      horizontalPosition: 'right',
-      verticalPosition: 'top',
-      duration: 5000
-    });
+
   }
 }

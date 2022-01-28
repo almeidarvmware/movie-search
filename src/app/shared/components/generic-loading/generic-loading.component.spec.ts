@@ -10,7 +10,7 @@ describe('GenericLoadingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ MatProgressSpinnerModule ],
+      imports: [],
       declarations: [ GenericLoadingComponent ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
