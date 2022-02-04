@@ -20,7 +20,7 @@ export class MovieService {
    * @returns {Observable<MovieQueryResult>}
    * @memberof MovieService
    */
-   public getMoviesWithQuery(query: string): Observable<any> {
-    return this.http.get(APIUrls.MOVIES.GET_WITH_QUERY(query));
+   public getMoviesWithQuery(query: string, page: number = 1): Observable<any> {
+    return this.http.get(APIUrls.MOVIES.GET_WITH_QUERY(query, page));
   }
 }

@@ -1,15 +1,16 @@
 <div class="results">
-    <div class="results__header">
+    <div class="header">
         <img src="assets/logo.png"
-             class="results__header__logo">
+             class="logo">
     </div>
     <div *ngIf="!showLoading">
         {{moviesList?.length}} movies found!
     </div>
 
-   
+    <app-generic-table [moviesList]="moviesList">
+    </app-generic-table>
 
-    <button class="results__back-btn"  
+    <button class="back-btn"  
             (click)="goBackToHome()">
             Home
     </button>

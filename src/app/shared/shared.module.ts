@@ -2,16 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { GenericLoadingComponent } from './components/generic-loading/generic-loading.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
-    GenericLoadingComponent
+    GenericLoadingComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    GenericLoadingComponent,
+    GenericLoadingComponent
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,22 @@
+.results-table {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  > .tablehead {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  .row {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+
+    > .cell {
+      padding: .625em;
+      text-align: center;
+    }
+  }
+}

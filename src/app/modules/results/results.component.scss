@@ -3,12 +3,12 @@
     height: 100vh;
     overflow: auto;
 
-    &__header {
+    .header {
         width: 100%;
         display: flex;
         justify-content: center;
 
-        &__logo {
+        > .logo {
             max-width: 50vw;
             height: auto;
             padding-top: 4vh;
@@ -16,7 +16,7 @@
         }
     }
 
-    &__back-btn {
+    .back-btn {
         top: auto;
         right: 20px;
         bottom: 20px;

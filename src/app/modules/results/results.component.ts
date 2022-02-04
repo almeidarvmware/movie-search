@@ -16,6 +16,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
   public searchQuery: string = '';
   public showLoading: boolean = false;
   public displayedColumns: string[] = ['title', 'release', 'overview'];
+  public page: number = 1;
 
 
   private subscriptionDestroyer: Subject<void> = new Subject<void>();
@@ -90,7 +91,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
   */
   private search(): void {
     this.showLoading = true;
-    this.movieService.getMoviesWithQuery(this.searchQuery)
+    this.movieService.getMoviesWithQuery(this.searchQuery, this.page)
         .pipe(takeUntil(this.subscriptionDestroyer))
         .subscribe({
           next: (data: MovieQueryResult) => {

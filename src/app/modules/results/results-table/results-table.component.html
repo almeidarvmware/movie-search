@@ -1,0 +1,17 @@
+<table class="results-table">
+    <thead class="tablehead">
+      <tr>
+        <th>Title</th>
+        <th>Release Date</th>
+        <th>Overview</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of moviesList"
+          class="row">
+        <td class="cell">{{movie.title}}</td>
+        <td class="cell">{{movie.release_date}}</td>
+        <td class="cell" >{{movie.overview}}</td>
+      </tr>
+    </tbody>
+</table>

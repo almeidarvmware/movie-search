@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { ResultsComponent } from './results.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ResultsTableComponent } from './results-table/results-table.component';
 
 @NgModule({
   declarations: [
-    ResultsComponent
+    ResultsComponent,
+    ResultsTableComponent
   ],
   imports: [
     CommonModule,
