@@ -17,6 +17,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
   public showLoading: boolean = false;
   public displayedColumns: string[] = ['title', 'release', 'overview'];
   public page: number = 1;
+  public numberOfPages:number = 1;
 
 
   private subscriptionDestroyer: Subject<void> = new Subject<void>();
@@ -39,7 +40,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
   }
 
   /**
-  * Unsubscribe from all Obaervers on component destroy
+  * Unsubscribe from all Observers on component destroy
   *
   * @memberof ResultsComponent
   */
@@ -68,6 +69,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
     const state: any = this.router.getCurrentNavigation()?.extras?.state;
     if (state?.data) {
       this.moviesList = state?.data?.results;
+      this.numberOfPages = state?.data?.total_pages
     }
   }
 
@@ -97,12 +99,13 @@ export class ResultsComponent implements OnInit, OnDestroy {
           next: (data: MovieQueryResult) => {
             this.showLoading = false;
             this.moviesList = data.results;
+            this.numberOfPages = data.total_pages;
           },
           error: (e) => {
             this.displayRequestError(e.error);
             this.showLoading = false;
           }
-        })
+        });
   }
 
   /**

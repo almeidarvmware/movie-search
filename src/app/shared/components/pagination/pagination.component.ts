@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import paginate from 'src/app/shared/pagination.util';
 
 @Component({
@@ -6,9 +6,9 @@ import paginate from 'src/app/shared/pagination.util';
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.scss']
 })
-export class PaginationComponent implements OnInit {
+export class PaginationComponent implements OnChanges {
 
-  @Input() items = [];
+  @Input() items: any = [];
   @Input() label: string = '';
   
   @Input() pageSize = 20;
@@ -21,7 +21,7 @@ export class PaginationComponent implements OnInit {
   public startIndex!: number;
   public endIndex!: number;
 
-  public ngOnInit() {
+  public ngOnChanges() {
     this.calculateIndexes();
   }
 
@@ -31,7 +31,7 @@ export class PaginationComponent implements OnInit {
     this.calculateIndexes();
   }
 
-  public getLabel(i: number): never {
+  public getLabel(i: number): any {
     return this.items[i][this.label];
   }
 
@@ -40,6 +40,9 @@ export class PaginationComponent implements OnInit {
   }
 
   private calculateIndexes() {
+    if(!this.items)
+      return;
+
     const pagination = paginate(
       this.items.length,
       this.currentPage,
@@ -50,6 +53,9 @@ export class PaginationComponent implements OnInit {
     this.pages = pagination.pages;
     this.startIndex = pagination.startIndex;
     this.endIndex = pagination.endIndex;
+
+    console.log('foda ', this.pages)
+
   }
 
 }

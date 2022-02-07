@@ -3,9 +3,6 @@
         <img src="assets/logo.png"
              class="logo">
     </div>
-    <div *ngIf="!showLoading">
-        {{moviesList?.length}} movies found!
-    </div>
 
     <app-generic-table [moviesList]="moviesList">
     </app-generic-table>
@@ -14,6 +11,12 @@
             (click)="goBackToHome()">
             Home
     </button>
+
+    <app-pagination [items]="moviesList"
+                    [maxPages]="numberOfPages"
+                    label="title">
+
+    </app-pagination>
 </div>
 
 <app-generic-loading *ngIf="showLoading">

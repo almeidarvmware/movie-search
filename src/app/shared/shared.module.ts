@@ -13,7 +13,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     CommonModule
   ],
   exports: [
-    GenericLoadingComponent
+    GenericLoadingComponent,
+    PaginationComponent
   ]
 })
 export class SharedModule { }
